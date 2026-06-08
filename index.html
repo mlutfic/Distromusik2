@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="dark scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>VIBE DISTRO | Music Distribution for Independent Artists</title>
@@ -126,18 +126,24 @@
             box-shadow: 0 0 20px rgba(36, 153, 255, 0.4);
             transform: translateY(-1px);
         }
+        @media (max-width: 767px) {
+            .nav-link {
+                font-size: 10px !important;
+                line-height: 1.1 !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-surface-deep text-on-surface font-body-md selection:bg-vibrant-blue selection:text-surface-deep overflow-x-hidden">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/20">
-<div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex flex-wrap justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <div class="font-headline-md text-headline-md font-black tracking-tighter text-on-surface">VIBE DISTRO</div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-vibrant-blue font-bold border-b-2 border-vibrant-blue pb-1 font-cta-label text-cta-label uppercase" href="#">Distribution</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-cta-label text-cta-label uppercase" href="#">Pricing</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-cta-label text-cta-label uppercase" href="#">Publishing</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-cta-label text-cta-label uppercase" href="#">Success Stories</a>
+<div class="order-3 mt-4 flex w-full justify-between gap-3 overflow-visible pb-1 md:order-none md:mt-0 md:w-auto md:justify-start md:gap-8 md:pb-0 md:items-center">
+<a class="nav-link text-vibrant-blue font-bold border-b-2 border-vibrant-blue pb-1 font-cta-label text-cta-label uppercase" data-view="home" href="#distribution">Distribution</a>
+<a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-cta-label text-cta-label uppercase" data-view="pricing" href="#pricing">Pricing</a>
+<a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-cta-label text-cta-label uppercase" data-view="home" href="#publishing">Publishing</a>
+<a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-cta-label text-cta-label uppercase" data-view="home" href="#stories">Success Stories</a>
 </div>
 <div class="flex gap-4 items-center">
 <button class="hidden md:block text-on-surface hover:opacity-80 transition-opacity font-cta-label text-cta-label uppercase">Sign In</button>
@@ -145,8 +151,9 @@
 </div>
 </div>
 </nav>
+<main id="home-view">
 <!-- Hero Section -->
-<section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+<section id="distribution" class="relative min-h-screen flex items-center pt-24 overflow-hidden">
 <div class="absolute inset-0 z-0">
 <img alt="Hero Artist" class="w-full h-full object-cover opacity-50 grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLu2aZjmIWHnvOH2VxlQC1cwxOwtMoOJGLWP4l-ah4IzcWOrjeWDFOeyK1OcnBj49pzJ1-Jcni1b6b4g7c3yT7DmuPXlKZZszj5CfpoR8KJBl5GtdDxsgBpeNP__ZpCE2MX89WNdMkZc16JKl8dE3HqK-kRxlnTuaJJOeFjuw-rJx2jWIrW8RmWK4yuuswE9RiRR6Cv1cRs4gRsSrShxCyAsy4fBAYPjEb0txISfNa3xxNwBJhlLFkyeGCo"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-surface-deep/40 to-transparent"></div>
@@ -238,7 +245,7 @@
 </div>
 </section>
 <!-- Bento About Section -->
-<section class="bg-surface-container-low py-section-gap-lg">
+<section id="publishing" class="bg-surface-container-low py-section-gap-lg">
 <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
 <div class="text-center mb-16">
 <span class="font-label-caps text-label-caps text-vibrant-blue mb-4 block">WHAT IS VIBE DISTRO?</span>
@@ -287,7 +294,7 @@
 </div>
 </section>
 <!-- Testimonials Section -->
-<section class="py-section-gap-lg px-6 md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<section id="stories" class="py-section-gap-lg px-6 md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
 <h2 class="font-headline-lg text-headline-lg mb-16 text-center">What Artists Are Saying</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Testimonial 1 -->
@@ -371,6 +378,142 @@
 </div>
 </div>
 </section>
+</main>
+<main id="pricing-view" class="hidden">
+<!-- Pricing Hero -->
+<section id="pricing" class="relative pt-32 md:pt-40 pb-16 md:pb-24 px-6 md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(36,153,255,0.14),transparent_34%),linear-gradient(180deg,rgba(0,0,0,0)_0%,#000_92%)]"></div>
+<div class="relative max-w-container-max mx-auto text-center">
+<span class="font-label-caps text-label-caps text-vibrant-blue mb-5 block">TRANSPARENT ECONOMICS</span>
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero max-w-4xl mx-auto">
+                    Own your music.<br class="hidden sm:block"/> Keep <span class="text-vibrant-blue">100%</span> earnings.
+                </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mt-6">
+                    No hidden fees, no percentage cuts. Choose the plan that fits your career stage and start distributing your sound globally.
+                </p>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-14 md:mt-20 text-left">
+<article class="bg-surface-elevated border border-outline-variant/20 p-8 md:p-10 min-h-[450px] flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase mb-4">Entry Level</span>
+<h2 class="font-headline-md text-headline-md mb-8">New Artist</h2>
+<div class="mb-5">
+<span class="font-headline-lg text-headline-lg">Free</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-8">Start your journey at zero cost.</p>
+<ul class="space-y-4 text-sm text-on-surface-variant mb-10">
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>150+ Digital Stores</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Keep 100% Royalties</li>
+<li class="flex gap-3 opacity-60"><span class="material-symbols-outlined text-base">radio_button_unchecked</span>Standard Release Date</li>
+</ul>
+<button class="mt-auto border border-outline text-on-surface py-4 w-full font-cta-label text-cta-label uppercase hover:border-vibrant-blue hover:text-vibrant-blue transition-colors">Get Started</button>
+</article>
+<article class="relative bg-surface-elevated border-2 border-vibrant-blue p-8 md:p-10 min-h-[450px] flex flex-col shadow-[0_0_35px_rgba(36,153,255,0.16)]">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-vibrant-blue text-surface-deep px-6 py-1 font-label-caps text-[10px] uppercase whitespace-nowrap">Most Popular</div>
+<span class="font-label-caps text-[10px] text-vibrant-blue uppercase mb-4">Professional</span>
+<h2 class="font-headline-md text-headline-md mb-8">Rising Artist</h2>
+<div class="mb-5 flex items-end gap-2">
+<span class="font-headline-lg text-headline-lg">$19.99</span>
+<span class="text-on-surface-variant text-sm pb-3">/year</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-8">For creators ready to scale their brand.</p>
+<ul class="space-y-4 text-sm text-on-surface-variant mb-10">
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Unlimited Distribution</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Scheduled Release Dates</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Official Store Verification</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Basic Marketing Tools</li>
+</ul>
+<button class="mt-auto bg-vibrant-blue text-surface-deep py-4 w-full font-cta-label text-cta-label uppercase hover:bg-primary-fixed-dim transition-colors">Go Pro</button>
+</article>
+<article class="bg-surface-elevated border border-outline-variant/20 p-8 md:p-10 min-h-[450px] flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase mb-4">Elite</span>
+<h2 class="font-headline-md text-headline-md mb-8">Breakout Artist</h2>
+<div class="mb-5 flex items-end gap-2">
+<span class="font-headline-lg text-headline-lg">$49.99</span>
+<span class="text-on-surface-variant text-sm pb-3">/year</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-8">Advanced tools for serious industry players.</p>
+<ul class="space-y-4 text-sm text-on-surface-variant mb-10">
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Up to 5 Artist Profiles</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Priority Direct Support</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Advanced Analytics + AI</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Custom Store ID Creation</li>
+</ul>
+<button class="mt-auto border border-outline text-on-surface py-4 w-full font-cta-label text-cta-label uppercase hover:border-vibrant-blue hover:text-vibrant-blue transition-colors">Go Elite</button>
+</article>
+</div>
+</div>
+</section>
+<!-- Feature Comparison -->
+<section class="bg-surface-container-low py-16 md:py-24 px-6 md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-center mb-12 md:mb-16">Compare Features</h2>
+<div class="overflow-x-auto">
+<table class="w-full min-w-[720px] border-collapse text-sm">
+<thead>
+<tr class="border-b border-outline-variant/20 text-left">
+<th class="py-5 font-label-caps text-[10px] text-outline uppercase">Feature</th>
+<th class="py-5 font-label-caps text-[10px] text-center uppercase">New Artist</th>
+<th class="py-5 font-label-caps text-[10px] text-center text-vibrant-blue uppercase">Rising Artist</th>
+<th class="py-5 font-label-caps text-[10px] text-center uppercase">Breakout Artist</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr><td class="py-6">Distribution to 150+ stores</td><td class="text-center text-vibrant-blue">✓</td><td class="text-center text-vibrant-blue">✓</td><td class="text-center text-vibrant-blue">✓</td></tr>
+<tr><td class="py-6">Keep 100% Royalties</td><td class="text-center text-vibrant-blue">✓</td><td class="text-center text-vibrant-blue">✓</td><td class="text-center text-vibrant-blue">✓</td></tr>
+<tr><td class="py-6">Scheduled Release Dates</td><td class="text-center text-outline">—</td><td class="text-center text-vibrant-blue">✓</td><td class="text-center text-vibrant-blue">✓</td></tr>
+<tr><td class="py-6">Official Store Verification</td><td class="text-center text-outline">—</td><td class="text-center text-vibrant-blue">✓</td><td class="text-center text-vibrant-blue">✓</td></tr>
+<tr><td class="py-6">Spotify for Artists Access</td><td class="text-center text-vibrant-blue">✓</td><td class="text-center text-vibrant-blue">✓</td><td class="text-center text-vibrant-blue">✓</td></tr>
+<tr><td class="py-6">Daily Trend Reports</td><td class="text-center text-outline">—</td><td class="text-center text-outline">—</td><td class="text-center text-vibrant-blue">✓</td></tr>
+<tr><td class="py-6">Royalty Splits</td><td class="text-center text-outline">—</td><td class="text-center text-vibrant-blue">✓</td><td class="text-center text-vibrant-blue">✓</td></tr>
+<tr><td class="py-6">YouTube Content ID</td><td class="text-center text-outline">15% Fee</td><td class="text-center text-vibrant-blue font-bold">Included</td><td class="text-center text-vibrant-blue font-bold">Included</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Pricing Testimonial -->
+<section class="py-16 md:py-24 px-6 md:px-margin-desktop">
+<div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+<div class="aspect-[4/3] bg-surface-elevated overflow-hidden">
+<img alt="Artist in studio" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLuZ1ordoHvfDOLw3j37q0MD4muacrljxtzyt2bWm0UVzxzIybTT9KKiB5Mw2x5y9qe9_vRQpW-uhW3rAZPAlckV8tMcwduj4fkQx75i8vfSNSJntQwscAPdLEDEbXlZgKtyyIeCDgF7K8_vCRWSiFbJA-HSZdYS8KbAIaW0IhddC98tyfIjmvY5MzuZ1oCxqomGRB8tPX8lRRj1FMV7Y2dM2iVlbizRIOk4meAqbjSEIenI3UZsqMnZyUk"/>
+</div>
+<div>
+<div class="text-vibrant-blue text-6xl font-black mb-6">”</div>
+<blockquote class="font-body-lg text-body-lg italic leading-relaxed mb-8">
+                    "Switching to VIBE DISTRO was the best career move I made. Keeping 100% of my royalties allowed me to fund my first national tour without taking on debt."
+                </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-elevated rounded-full overflow-hidden">
+<img alt="Marcus Vee" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLtrSFAlgQng1Etw3l7FP8yhMzG_uHUACiH2eepJ2SDmkeUz-vxVJ61PQoE-clwS1Dw67tyt59pI0EMCWkkaZE8Ti4r5xkj1pxgE2vnpWyOKAOAfOAJzACVI-MXeOJi7979jVZxm34VDiRxAnwTyo6sn8etq_0wWFM0Rna7rZ0XvRo0v9-meoUwOI4VLbBry5qu7sl9hKgFqPSD4Jx87XmkEXbJTrM5-Pz13QWi3ITQ65Ebe1MnNvnBefug"/>
+</div>
+<div>
+<p class="font-label-caps text-[10px] uppercase">Marcus Vee</p>
+<p class="text-xs text-outline">Independent Producer, 2M+ Monthly Listeners</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing FAQ -->
+<section class="pb-20 md:pb-28 px-6 md:px-margin-desktop">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-center mb-10">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<details class="bg-surface-elevated border border-outline-variant/10 group">
+<summary class="cursor-pointer list-none p-5 flex items-center justify-between font-cta-label text-cta-label uppercase">How often do I get paid?<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span></summary>
+<p class="px-5 pb-5 text-on-surface-variant text-sm">Royalty reports are updated monthly, and payouts can be requested once your balance reaches the minimum payout threshold.</p>
+</details>
+<details class="bg-surface-elevated border border-outline-variant/10 group">
+<summary class="cursor-pointer list-none p-5 flex items-center justify-between font-cta-label text-cta-label uppercase">Can I switch plans later?<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span></summary>
+<p class="px-5 pb-5 text-on-surface-variant text-sm">Yes. You can upgrade whenever your catalog or team needs more advanced tools.</p>
+</details>
+<details class="bg-surface-elevated border border-outline-variant/10 group">
+<summary class="cursor-pointer list-none p-5 flex items-center justify-between font-cta-label text-cta-label uppercase">Do you take a cut of my sync placements?<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span></summary>
+<p class="px-5 pb-5 text-on-surface-variant text-sm">No. You keep your rights and earnings unless you opt into a clearly labeled add-on service.</p>
+</details>
+</div>
+</div>
+</section>
+</main>
 <!-- Footer -->
 <footer class="bg-surface-deep border-t border-outline-variant/30 py-section-gap-md mt-section-gap-lg">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-desktop max-w-container-max mx-auto">
@@ -421,6 +564,54 @@
 </div>
 </footer>
 <script>
+        const homeView = document.getElementById('home-view');
+        const pricingView = document.getElementById('pricing-view');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function setActiveNav(view) {
+            navLinks.forEach(link => {
+                const isActive = link.dataset.view === view;
+                link.classList.toggle('text-vibrant-blue', isActive);
+                link.classList.toggle('font-bold', isActive);
+                link.classList.toggle('border-b-2', isActive);
+                link.classList.toggle('border-vibrant-blue', isActive);
+                link.classList.toggle('pb-1', isActive);
+                link.classList.toggle('text-on-surface-variant', !isActive);
+            });
+        }
+
+        function showView(view) {
+            const showPricing = view === 'pricing';
+            pricingView.classList.toggle('hidden', !showPricing);
+            homeView.classList.toggle('hidden', showPricing);
+            setActiveNav(view);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                if (link.dataset.view === 'pricing') {
+                    event.preventDefault();
+                    history.replaceState(null, '', '#pricing');
+                    showView('pricing');
+                } else if (pricingView && !pricingView.classList.contains('hidden')) {
+                    event.preventDefault();
+                    history.replaceState(null, '', link.getAttribute('href'));
+                    showView('home');
+                }
+            });
+        });
+
+        if (window.location.hash === '#pricing') {
+            showView('pricing');
+        }
+
+        window.addEventListener('hashchange', () => {
+            if (window.location.hash === '#pricing') {
+                showView('pricing');
+            }
+        });
+
         // Micro-interaction for scroll effects
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
