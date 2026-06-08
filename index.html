@@ -126,6 +126,64 @@
             box-shadow: 0 0 20px rgba(36, 153, 255, 0.4);
             transform: translateY(-1px);
         }
+        .spotlight-hover {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+        }
+        .spotlight-hover::before {
+            content: "";
+            position: absolute;
+            inset: -35%;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0;
+            background:
+                radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 45%), rgba(36, 153, 255, 0.55), transparent 0 18%, rgba(36, 153, 255, 0.18) 28%, transparent 46%),
+                linear-gradient(135deg, transparent 20%, rgba(255, 255, 255, 0.16) 48%, transparent 58%);
+            mix-blend-mode: screen;
+            transform: translate3d(-8%, -8%, 0) rotate(8deg);
+            transition: opacity 0.35s ease, transform 0.55s ease;
+        }
+        .spotlight-hover::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            opacity: 0;
+            border: 1px solid rgba(36, 153, 255, 0.7);
+            box-shadow: inset 0 0 36px rgba(36, 153, 255, 0.25);
+            transition: opacity 0.35s ease;
+        }
+        .spotlight-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(36, 153, 255, 0.7) !important;
+            box-shadow: 0 0 42px rgba(36, 153, 255, 0.28), 0 18px 48px rgba(0, 0, 0, 0.42);
+        }
+        .spotlight-hover:hover::before {
+            opacity: 1;
+            transform: translate3d(8%, 8%, 0) rotate(8deg);
+        }
+        .spotlight-hover:hover::after {
+            opacity: 1;
+        }
+        .spotlight-hover img {
+            transition: transform 0.7s ease, filter 0.7s ease, opacity 0.7s ease;
+        }
+        .spotlight-hover:hover img {
+            transform: scale(1.04);
+            filter: grayscale(0) contrast(1.08) brightness(1.08);
+        }
+        .spotlight-hover .material-symbols-outlined {
+            transition: color 0.35s ease, text-shadow 0.35s ease, transform 0.35s ease;
+        }
+        .spotlight-hover:hover .material-symbols-outlined {
+            color: #2499FF;
+            text-shadow: 0 0 18px rgba(36, 153, 255, 0.65);
+            transform: scale(1.08);
+        }
         @media (max-width: 767px) {
             .nav-link {
                 font-size: 10px !important;
@@ -223,22 +281,22 @@
 </div>
 <div class="grid grid-cols-3 gap-4">
 <!-- Visual representation of stores -->
-<div class="bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
+<div class="spotlight-hover bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
 <span class="material-symbols-outlined text-5xl text-on-surface-variant">music_note</span>
 </div>
-<div class="bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
+<div class="spotlight-hover bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
 <span class="material-symbols-outlined text-5xl text-on-surface-variant">podcasts</span>
 </div>
-<div class="bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
+<div class="spotlight-hover bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
 <span class="material-symbols-outlined text-5xl text-on-surface-variant">video_library</span>
 </div>
-<div class="bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
+<div class="spotlight-hover bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
 <span class="material-symbols-outlined text-5xl text-on-surface-variant">headset</span>
 </div>
-<div class="bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
+<div class="spotlight-hover bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
 <span class="material-symbols-outlined text-5xl text-on-surface-variant">radio</span>
 </div>
-<div class="bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
+<div class="spotlight-hover bg-surface-elevated aspect-square rounded-xl flex items-center justify-center p-6 border border-outline-variant/10 hover:border-vibrant-blue/50 transition-colors">
 <span class="material-symbols-outlined text-5xl text-on-surface-variant">library_music</span>
 </div>
 </div>
@@ -298,7 +356,7 @@
 <h2 class="font-headline-lg text-headline-lg mb-16 text-center">What Artists Are Saying</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Testimonial 1 -->
-<div class="bg-surface-elevated rounded-2xl overflow-hidden border border-outline-variant/10 group">
+<div class="spotlight-hover bg-surface-elevated rounded-2xl overflow-hidden border border-outline-variant/10 group">
 <div class="h-64 overflow-hidden">
 <img alt="KenTheMan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLtrSFAlgQng1Etw3l7FP8yhMzG_uHUACiH2eepJ2SDmkeUz-vxVJ61PQoE-clwS1Dw67tyt59pI0EMCWkkaZE8Ti4r5xkj1pxgE2vnpWyOKAOAfOAJzACVI-MXeOJi7979jVZxm34VDiRxAnwTyo6sn8etq_0wWFM0Rna7rZ0XvRo0v9-meoUwOI4VLbBry5qu7sl9hKgFqPSD4Jx87XmkEXbJTrM5-Pz13QWi3ITQ65Ebe1MnNvnBefug"/>
 </div>
@@ -308,7 +366,7 @@
 </div>
 </div>
 <!-- Testimonial 2 -->
-<div class="bg-surface-elevated rounded-2xl overflow-hidden border border-outline-variant/10 group">
+<div class="spotlight-hover bg-surface-elevated rounded-2xl overflow-hidden border border-outline-variant/10 group">
 <div class="h-64 overflow-hidden">
 <img alt="AdELA" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLuZ1ordoHvfDOLw3j37q0MD4muacrljxtzyt2bWm0UVzxzIybTT9KKiB5Mw2x5y9qe9_vRQpW-uhW3rAZPAlckV8tMcwduj4fkQx75i8vfSNSJntQwscAPdLEDEbXlZgKtyyIeCDgF7K8_vCRWSiFbJA-HSZdYS8KbAIaW0IhddC98tyfIjmvY5MzuZ1oCxqomGRB8tPX8lRRj1FMV7Y2dM2iVlbizRIOk4meAqbjSEIenI3UZsqMnZyUk"/>
 </div>
@@ -318,7 +376,7 @@
 </div>
 </div>
 <!-- Testimonial 3 -->
-<div class="bg-surface-elevated rounded-2xl overflow-hidden border border-outline-variant/10 group">
+<div class="spotlight-hover bg-surface-elevated rounded-2xl overflow-hidden border border-outline-variant/10 group">
 <div class="h-64 overflow-hidden relative">
 <img alt="Sy Ari Da Kid" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLszW0JIVtrSErFvEQd2e1-nujNos0cEzD65NbHUDDsebq_M92G3TU46YTQqtW5Sx3EeotcQ1utpKH7IkWH7hyDxz0mOGbJz0Jq4ATj2MGqA67p3fPomiQl4EBl2QOV3cBUA0t-XSq6YID_9nQguc4B1XVJTUJZNZg5QahNq68XqxVIN2pN_CPxGCgWe1vInwOEus9Q58keDd7_M_Gav4wykwUjMz__qRxRAjvwnoUs2h4r2jx45YWQ5SQ"/>
 </div>
@@ -392,7 +450,7 @@
                     No hidden fees, no percentage cuts. Choose the plan that fits your career stage and start distributing your sound globally.
                 </p>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-14 md:mt-20 text-left">
-<article class="bg-surface-elevated border border-outline-variant/20 p-8 md:p-10 min-h-[450px] flex flex-col">
+<article class="spotlight-hover bg-surface-elevated border border-outline-variant/20 p-8 md:p-10 min-h-[450px] flex flex-col">
 <span class="font-label-caps text-[10px] text-outline uppercase mb-4">Entry Level</span>
 <h2 class="font-headline-md text-headline-md mb-8">New Artist</h2>
 <div class="mb-5">
@@ -406,7 +464,7 @@
 </ul>
 <button class="mt-auto border border-outline text-on-surface py-4 w-full font-cta-label text-cta-label uppercase hover:border-vibrant-blue hover:text-vibrant-blue transition-colors">Get Started</button>
 </article>
-<article class="relative bg-surface-elevated border-2 border-vibrant-blue p-8 md:p-10 min-h-[450px] flex flex-col shadow-[0_0_35px_rgba(36,153,255,0.16)]">
+<article class="spotlight-hover relative bg-surface-elevated border-2 border-vibrant-blue p-8 md:p-10 min-h-[450px] flex flex-col shadow-[0_0_35px_rgba(36,153,255,0.16)]">
 <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-vibrant-blue text-surface-deep px-6 py-1 font-label-caps text-[10px] uppercase whitespace-nowrap">Most Popular</div>
 <span class="font-label-caps text-[10px] text-vibrant-blue uppercase mb-4">Professional</span>
 <h2 class="font-headline-md text-headline-md mb-8">Rising Artist</h2>
@@ -423,7 +481,7 @@
 </ul>
 <button class="mt-auto bg-vibrant-blue text-surface-deep py-4 w-full font-cta-label text-cta-label uppercase hover:bg-primary-fixed-dim transition-colors">Go Pro</button>
 </article>
-<article class="bg-surface-elevated border border-outline-variant/20 p-8 md:p-10 min-h-[450px] flex flex-col">
+<article class="spotlight-hover bg-surface-elevated border border-outline-variant/20 p-8 md:p-10 min-h-[450px] flex flex-col">
 <span class="font-label-caps text-[10px] text-outline uppercase mb-4">Elite</span>
 <h2 class="font-headline-md text-headline-md mb-8">Breakout Artist</h2>
 <div class="mb-5 flex items-end gap-2">
@@ -473,7 +531,7 @@
 <!-- Pricing Testimonial -->
 <section class="py-16 md:py-24 px-6 md:px-margin-desktop">
 <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-<div class="aspect-[4/3] bg-surface-elevated overflow-hidden">
+<div class="spotlight-hover aspect-[4/3] bg-surface-elevated overflow-hidden">
 <img alt="Artist in studio" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLuZ1ordoHvfDOLw3j37q0MD4muacrljxtzyt2bWm0UVzxzIybTT9KKiB5Mw2x5y9qe9_vRQpW-uhW3rAZPAlckV8tMcwduj4fkQx75i8vfSNSJntQwscAPdLEDEbXlZgKtyyIeCDgF7K8_vCRWSiFbJA-HSZdYS8KbAIaW0IhddC98tyfIjmvY5MzuZ1oCxqomGRB8tPX8lRRj1FMV7Y2dM2iVlbizRIOk4meAqbjSEIenI3UZsqMnZyUk"/>
 </div>
 <div>
@@ -532,7 +590,7 @@
 <button class="border border-outline text-on-surface px-8 py-4 font-cta-label text-cta-label uppercase hover:border-vibrant-blue hover:text-vibrant-blue transition-colors">View Pricing</button>
 </div>
 </div>
-<div class="mx-auto lg:ml-auto w-full max-w-[390px] bg-surface-deep border border-outline-variant/20 p-4 shadow-[0_0_50px_rgba(36,153,255,0.12)]">
+<div class="spotlight-hover mx-auto lg:ml-auto w-full max-w-[390px] bg-surface-deep border border-outline-variant/20 p-4 shadow-[0_0_50px_rgba(36,153,255,0.12)]">
 <img alt="Publishing artist" class="w-full aspect-[4/5] object-cover grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLu2aZjmIWHnvOH2VxlQC1cwxOwtMoOJGLWP4l-ah4IzcWOrjeWDFOeyK1OcnBj49pzJ1-Jcni1b6b4g7c3yT7DmuPXlKZZszj5CfpoR8KJBl5GtdDxsgBpeNP__ZpCE2MX89WNdMkZc16JKl8dE3HqK-kRxlnTuaJJOeFjuw-rJx2jWIrW8RmWK4yuuswE9RiRR6Cv1cRs4gRsSrShxCyAsy4fBAYPjEb0txISfNa3xxNwBJhlLFkyeGCo"/>
 </div>
 </div>
@@ -545,19 +603,19 @@
 <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">We tap into over 80 collection societies worldwide to ensure every stream and broadcast is accounted for.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<article class="bg-surface-container-lowest border border-outline-variant/10 p-8">
+<article class="spotlight-hover bg-surface-container-lowest border border-outline-variant/10 p-8">
 <div class="w-10 h-10 bg-vibrant-blue/10 text-vibrant-blue flex items-center justify-center mb-8"><span class="material-symbols-outlined">stream</span></div>
 <h3 class="font-headline-md text-headline-md mb-4">Streaming & Digital</h3>
 <p class="text-sm text-on-surface-variant mb-8">Collect mechanical and performance royalties from Spotify, Apple Music, YouTube, and Amazon.</p>
 <p class="font-label-caps text-[10px] text-vibrant-blue uppercase border-t border-outline-variant/10 pt-5">120+ Territories</p>
 </article>
-<article class="bg-surface-container-lowest border border-outline-variant/10 p-8">
+<article class="spotlight-hover bg-surface-container-lowest border border-outline-variant/10 p-8">
 <div class="w-10 h-10 bg-electric-orange/10 text-electric-orange flex items-center justify-center mb-8"><span class="material-symbols-outlined">radio</span></div>
 <h3 class="font-headline-md text-headline-md mb-4">Live & Radio</h3>
 <p class="text-sm text-on-surface-variant mb-8">Earn royalties for every spin on the radio and every time you perform your songs live at venues.</p>
 <p class="font-label-caps text-[10px] text-electric-orange uppercase border-t border-outline-variant/10 pt-5">Venues & Airwaves</p>
 </article>
-<article class="bg-surface-container-lowest border border-outline-variant/10 p-8">
+<article class="spotlight-hover bg-surface-container-lowest border border-outline-variant/10 p-8">
 <div class="w-10 h-10 bg-power-pink/10 text-power-pink flex items-center justify-center mb-8"><span class="material-symbols-outlined">movie</span></div>
 <h3 class="font-headline-md text-headline-md mb-4">Sync Licensing</h3>
 <p class="text-sm text-on-surface-variant mb-8">Our team actively pitches your tracks for TV, film, and gaming opportunities to maximize exposure.</p>
@@ -569,7 +627,7 @@
 <!-- Ownership Panel -->
 <section class="py-16 md:py-24 px-6 md:px-margin-desktop">
 <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8">
-<div class="relative min-h-[360px] bg-surface-elevated overflow-hidden flex items-end p-8 md:p-10">
+<div class="spotlight-hover relative min-h-[360px] bg-surface-elevated overflow-hidden flex items-end p-8 md:p-10">
 <img alt="Live concert crowd" class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLszW0JIVtrSErFvEQd2e1-nujNos0cEzD65NbHUDDsebq_M92G3TU46YTQqtW5Sx3EeotcQ1utpKH7IkWH7hyDxz0mOGbJz0Jq4ATj2MGqA67p3fPomiQl4EBl2QOV3cBUA0t-XSq6YID_9nQguc4B1XVJTUJZNZg5QahNq68XqxVIN2pN_CPxGCgWe1vInwOEus9Q58keDd7_M_Gav4wykwUjMz__qRxRAjvwnoUs2h4r2jx45YWQ5SQ"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-surface-deep/55 to-transparent"></div>
 <div class="relative">
@@ -579,14 +637,14 @@
 </div>
 </div>
 <div class="grid gap-6">
-<article class="bg-surface-container-lowest border-2 border-vibrant-blue p-8 md:p-10 flex items-center gap-6">
+<article class="spotlight-hover bg-surface-container-lowest border-2 border-vibrant-blue p-8 md:p-10 flex items-center gap-6">
 <span class="material-symbols-outlined text-vibrant-blue">verified_user</span>
 <div>
 <h3 class="font-headline-md text-headline-md mb-2">Global Registration</h3>
 <p class="text-sm text-on-surface-variant">Automated filing with BMI, ASCAP, PRS, and more.</p>
 </div>
 </article>
-<article class="bg-surface-container-lowest border-2 border-electric-orange p-8 md:p-10 flex items-center gap-6">
+<article class="spotlight-hover bg-surface-container-lowest border-2 border-electric-orange p-8 md:p-10 flex items-center gap-6">
 <span class="material-symbols-outlined text-electric-orange">payments</span>
 <div>
 <h3 class="font-headline-md text-headline-md mb-2">Weekly Payouts</h3>
@@ -666,7 +724,7 @@
                 </p>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-[1.9fr_0.95fr] gap-6">
-<article class="relative min-h-[620px] md:min-h-[760px] overflow-hidden border border-outline-variant/20 bg-surface-elevated group">
+<article class="spotlight-hover relative min-h-[620px] md:min-h-[760px] overflow-hidden border border-outline-variant/20 bg-surface-elevated group">
 <img alt="KenTheMan portrait" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLtrSFAlgQng1Etw3l7FP8yhMzG_uHUACiH2eepJ2SDmkeUz-vxVJ61PQoE-clwS1Dw67tyt59pI0EMCWkkaZE8Ti4r5xkj1pxgE2vnpWyOKAOAfOAJzACVI-MXeOJi7979jVZxm34VDiRxAnwTyo6sn8etq_0wWFM0Rna7rZ0XvRo0v9-meoUwOI4VLbBry5qu7sl9hKgFqPSD4Jx87XmkEXbJTrM5-Pz13QWi3ITQ65Ebe1MnNvnBefug"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-surface-deep/35 to-transparent"></div>
 <div class="absolute inset-x-0 bottom-0 p-8 md:p-10">
@@ -686,7 +744,7 @@
 </div>
 </article>
 <div class="grid grid-cols-1 gap-6">
-<article class="relative min-h-[360px] overflow-hidden border border-outline-variant/20 bg-surface-elevated group">
+<article class="spotlight-hover relative min-h-[360px] overflow-hidden border border-outline-variant/20 bg-surface-elevated group">
 <img alt="AdELA singing" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLu2aZjmIWHnvOH2VxlQC1cwxOwtMoOJGLWP4l-ah4IzcWOrjeWDFOeyK1OcnBj49pzJ1-Jcni1b6b4g7c3yT7DmuPXlKZZszj5CfpoR8KJBl5GtdDxsgBpeNP__ZpCE2MX89WNdMkZc16JKl8dE3HqK-kRxlnTuaJJOeFjuw-rJx2jWIrW8RmWK4yuuswE9RiRR6Cv1cRs4gRsSrShxCyAsy4fBAYPjEb0txISfNa3xxNwBJhlLFkyeGCo"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-surface-deep/35 to-transparent"></div>
 <div class="absolute inset-x-0 bottom-0 p-8">
@@ -696,7 +754,7 @@
 <p class="font-headline-md text-headline-md">45M</p>
 </div>
 </article>
-<article class="relative min-h-[360px] overflow-hidden border border-outline-variant/20 bg-surface-elevated group">
+<article class="spotlight-hover relative min-h-[360px] overflow-hidden border border-outline-variant/20 bg-surface-elevated group">
 <img alt="Sy Ari Da Kid" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLszW0JIVtrSErFvEQd2e1-nujNos0cEzD65NbHUDDsebq_M92G3TU46YTQqtW5Sx3EeotcQ1utpKH7IkWH7hyDxz0mOGbJz0Jq4ATj2MGqA67p3fPomiQl4EBl2QOV3cBUA0t-XSq6YID_9nQguc4B1XVJTUJZNZg5QahNq68XqxVIN2pN_CPxGCgWe1vInwOEus9Q58keDd7_M_Gav4wykwUjMz__qRxRAjvwnoUs2h4r2jx45YWQ5SQ"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-surface-deep/45 to-transparent"></div>
 <div class="absolute inset-x-0 bottom-0 p-8">
@@ -735,7 +793,7 @@
 </ul>
 <button class="border-2 border-on-surface text-on-surface px-8 py-4 font-cta-label text-cta-label uppercase hover:border-vibrant-blue hover:text-vibrant-blue transition-colors">Read Full Case Study</button>
 </div>
-<div class="relative min-h-[360px] md:min-h-[520px] overflow-hidden border border-vibrant-blue/40 bg-surface-elevated">
+<div class="spotlight-hover relative min-h-[360px] md:min-h-[520px] overflow-hidden border border-vibrant-blue/40 bg-surface-elevated">
 <img alt="Sold out concert" class="absolute inset-0 w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLszW0JIVtrSErFvEQd2e1-nujNos0cEzD65NbHUDDsebq_M92G3TU46YTQqtW5Sx3EeotcQ1utpKH7IkWH7hyDxz0mOGbJz0Jq4ATj2MGqA67p3fPomiQl4EBl2QOV3cBUA0t-XSq6YID_9nQguc4B1XVJTUJZNZg5QahNq68XqxVIN2pN_CPxGCgWe1vInwOEus9Q58keDd7_M_Gav4wykwUjMz__qRxRAjvwnoUs2h4r2jx45YWQ5SQ"/>
 <div class="absolute inset-0 bg-gradient-to-t from-power-pink/35 via-transparent to-vibrant-blue/10"></div>
 </div>
@@ -862,6 +920,16 @@
             if (hashViews[window.location.hash]) {
                 showView(hashViews[window.location.hash]);
             }
+        });
+
+        document.querySelectorAll('.spotlight-hover').forEach(element => {
+            element.addEventListener('pointermove', event => {
+                const rect = element.getBoundingClientRect();
+                const x = ((event.clientX - rect.left) / rect.width) * 100;
+                const y = ((event.clientY - rect.top) / rect.height) * 100;
+                element.style.setProperty('--spot-x', `${x}%`);
+                element.style.setProperty('--spot-y', `${y}%`);
+            });
         });
 
         // Micro-interaction for scroll effects
