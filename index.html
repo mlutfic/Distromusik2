@@ -126,6 +126,252 @@
             box-shadow: 0 0 20px rgba(36, 153, 255, 0.4);
             transform: translateY(-1px);
         }
+        .login-screen {
+            min-height: 100vh;
+            background: #05070b;
+            color: #f2f5f4;
+            display: grid;
+            grid-template-columns: minmax(420px, 507px) 1fr;
+        }
+        .login-panel {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 52px;
+            background:
+                radial-gradient(circle at 25% 52%, rgba(99, 31, 62, 0.62), transparent 0 25%),
+                linear-gradient(115deg, rgba(20, 59, 66, 0.92) 0%, rgba(18, 23, 31, 0.98) 57%, rgba(10, 12, 15, 1) 100%);
+        }
+        .login-form-wrap {
+            width: min(360px, 100%);
+            transform: none;
+        }
+        .tunecore-logo {
+            margin: 0 0 22px 53px;
+            font-family: "Hanken Grotesk", Inter, sans-serif;
+            font-size: 52px;
+            line-height: 1;
+            color: #ffffff;
+            letter-spacing: 0;
+            white-space: nowrap;
+        }
+        .tunecore-logo strong {
+            font-weight: 900;
+        }
+        .tunecore-logo span {
+            font-weight: 400;
+        }
+        .login-field {
+            margin-bottom: 19px;
+        }
+        .login-field label {
+            display: block;
+            color: rgba(235, 238, 240, 0.61);
+            font-size: 16px;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+        .login-field input {
+            width: 100%;
+            height: 46px;
+            border-radius: 7px;
+            border: 2px solid rgba(174, 178, 185, 0.35);
+            background: rgba(62, 45, 58, 0.56);
+            color: #fff;
+            padding: 8px 12px;
+            outline: none;
+            box-shadow: none;
+        }
+        .login-field input:focus {
+            border-color: rgba(0, 204, 153, 0.74);
+            box-shadow: 0 0 0 1px rgba(0, 204, 153, 0.2);
+        }
+        .login-actions {
+            display: grid;
+            justify-items: center;
+            margin-top: 35px;
+        }
+        .login-submit {
+            min-width: 86px;
+            height: 39px;
+            border-radius: 999px;
+            background: #00cb96;
+            color: #fff;
+            font-family: "Hanken Grotesk", Inter, sans-serif;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .login-forgot {
+            justify-self: start;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 12px;
+            line-height: 1;
+            text-decoration: underline;
+            margin-top: 9px;
+            margin-left: -2px;
+        }
+        .login-account {
+            color: #00ff9a;
+            font-size: 16px;
+            line-height: 1;
+            margin-top: 34px;
+            text-decoration: underline;
+        }
+        .login-photo {
+            min-height: 100vh;
+            background-image: url("assets/login-concert.png");
+            background-size: cover;
+            background-position: center center;
+        }
+        .signup-panel {
+            align-items: flex-start;
+            padding-top: 35px;
+        }
+        .signup-form-wrap {
+            width: 270px;
+        }
+        .signup-title {
+            margin-bottom: 17px;
+            text-align: center;
+            font-family: "Hanken Grotesk", Inter, sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 1;
+            color: rgba(242, 245, 244, 0.88);
+        }
+        .signup-title span {
+            color: #00c98f;
+        }
+        .signup-field {
+            margin-bottom: 12px;
+        }
+        .signup-field label {
+            display: block;
+            color: rgba(235, 238, 240, 0.6);
+            font-size: 12px;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+        .signup-field input,
+        .signup-field select {
+            width: 100%;
+            height: 34px;
+            border-radius: 5px;
+            border: 1px solid rgba(174, 178, 185, 0.45);
+            background: rgba(18, 36, 41, 0.5);
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 12px;
+            padding: 7px 9px;
+            outline: none;
+            box-shadow: none;
+        }
+        .signup-field input:focus,
+        .signup-field select:focus {
+            border-color: rgba(0, 204, 153, 0.7);
+            box-shadow: 0 0 0 1px rgba(0, 204, 153, 0.15);
+        }
+        .signup-field select {
+            appearance: none;
+            background-image: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.24) 50%), linear-gradient(135deg, rgba(255, 255, 255, 0.24) 50%, transparent 50%);
+            background-position: calc(100% - 13px) 15px, calc(100% - 9px) 15px;
+            background-size: 4px 4px, 4px 4px;
+            background-repeat: no-repeat;
+        }
+        .signup-help {
+            margin-top: -4px;
+            margin-bottom: 9px;
+            color: rgba(255, 255, 255, 0.66);
+            font-size: 8.8px;
+            line-height: 1.05;
+        }
+        .signup-terms {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+            margin: 29px 0 18px;
+            color: rgba(255, 255, 255, 0.73);
+            font-size: 9px;
+            line-height: 1;
+        }
+        .signup-terms input {
+            width: 9px;
+            height: 9px;
+            border-radius: 0;
+        }
+        .signup-terms a,
+        .signup-login a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        .fake-recaptcha {
+            width: 227px;
+            height: 58px;
+            margin: 0 auto 15px;
+            display: grid;
+            grid-template-columns: 33px 1fr 44px;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            background: #232323;
+            color: #ffffff;
+            padding: 8px 7px;
+        }
+        .fake-check {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            background: #ffffff;
+        }
+        .fake-recaptcha-text {
+            font-size: 12px;
+        }
+        .fake-recaptcha-small {
+            display: block;
+            margin-top: 8px;
+            font-size: 6px;
+            line-height: 1;
+        }
+        .fake-recaptcha-badge {
+            justify-self: end;
+            text-align: center;
+            font-size: 7px;
+            line-height: 1;
+        }
+        .fake-recaptcha-badge .material-symbols-outlined {
+            display: block;
+            color: #477edc;
+            font-size: 24px;
+            line-height: 20px;
+            font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+        }
+        .signup-submit {
+            display: block;
+            min-width: 74px;
+            height: 30px;
+            margin: 0 auto;
+            border-radius: 999px;
+            background: #00cb96;
+            color: rgba(255, 255, 255, 0.42);
+            font-family: "Hanken Grotesk", Inter, sans-serif;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.55;
+        }
+        .signup-login {
+            margin-top: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 13px;
+            line-height: 1;
+        }
+        .signup-login a {
+            color: #00ff9a;
+        }
         .spotlight-hover {
             position: relative;
             overflow: hidden;
@@ -189,6 +435,36 @@
                 font-size: 10px !important;
                 line-height: 1.1 !important;
             }
+            .login-screen {
+                display: block;
+                background-image:
+                    linear-gradient(90deg, rgba(8, 13, 17, 0.94), rgba(11, 14, 18, 0.76)),
+                    url("assets/login-concert.png");
+                background-size: cover;
+                background-position: center;
+            }
+            .login-panel {
+                min-height: 100vh;
+                padding: 56px 22px;
+                background:
+                    radial-gradient(circle at 30% 48%, rgba(99, 31, 62, 0.64), transparent 0 28%),
+                    linear-gradient(115deg, rgba(20, 59, 66, 0.91) 0%, rgba(10, 12, 15, 0.82) 100%);
+            }
+            .login-form-wrap {
+                transform: none;
+            }
+            .tunecore-logo {
+                margin-left: 0;
+                text-align: center;
+                font-size: 46px;
+            }
+            .login-photo {
+                display: none;
+            }
+            .signup-panel {
+                align-items: center;
+                padding-top: 42px;
+            }
         }
     </style>
 </head>
@@ -204,8 +480,8 @@
 <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors font-cta-label text-cta-label uppercase" data-view="success" href="#success-stories">Success Stories</a>
 </div>
 <div class="flex gap-4 items-center">
-<button class="hidden md:block text-on-surface hover:opacity-80 transition-opacity font-cta-label text-cta-label uppercase">Sign In</button>
-<button class="vibrant-gradient px-6 py-3 rounded-lg text-surface-deep font-cta-label text-cta-label uppercase active:scale-95 transition-all">Get Started</button>
+<button id="sign-in-button" class="hidden md:block text-on-surface hover:opacity-80 transition-opacity font-cta-label text-cta-label uppercase">Sign In</button>
+<button class="get-started-button vibrant-gradient px-6 py-3 rounded-lg text-surface-deep font-cta-label text-cta-label uppercase active:scale-95 transition-all">Get Started</button>
 </div>
 </div>
 </nav>
@@ -462,7 +738,7 @@
 <li class="flex gap-3"><span class="material-symbols-outlined text-vibrant-blue text-base">check_circle</span>Keep 100% Royalties</li>
 <li class="flex gap-3 opacity-60"><span class="material-symbols-outlined text-base">radio_button_unchecked</span>Standard Release Date</li>
 </ul>
-<button class="mt-auto border border-outline text-on-surface py-4 w-full font-cta-label text-cta-label uppercase hover:border-vibrant-blue hover:text-vibrant-blue transition-colors">Get Started</button>
+<button class="get-started-button mt-auto border border-outline text-on-surface py-4 w-full font-cta-label text-cta-label uppercase hover:border-vibrant-blue hover:text-vibrant-blue transition-colors">Get Started</button>
 </article>
 <article class="spotlight-hover relative bg-surface-elevated border-2 border-vibrant-blue p-8 md:p-10 min-h-[450px] flex flex-col shadow-[0_0_35px_rgba(36,153,255,0.16)]">
 <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-vibrant-blue text-surface-deep px-6 py-1 font-label-caps text-[10px] uppercase whitespace-nowrap">Most Popular</div>
@@ -586,7 +862,7 @@
                     Don't leave money on the table. We register your music globally to collect royalties from streaming, radio broadcasts, and live venues while you keep 100% of your copyright.
                 </p>
 <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
-<button class="bg-vibrant-blue text-surface-deep px-8 py-4 font-cta-label text-cta-label uppercase hover:bg-primary-fixed-dim transition-colors">Get Started</button>
+<button class="get-started-button bg-vibrant-blue text-surface-deep px-8 py-4 font-cta-label text-cta-label uppercase hover:bg-primary-fixed-dim transition-colors">Get Started</button>
 <button class="border border-outline text-on-surface px-8 py-4 font-cta-label text-cta-label uppercase hover:border-vibrant-blue hover:text-vibrant-blue transition-colors">View Pricing</button>
 </div>
 </div>
@@ -706,7 +982,7 @@
 <div class="max-w-container-max mx-auto bg-[linear-gradient(135deg,rgba(36,153,255,0.22),rgba(16,24,32,0.65))] border border-vibrant-blue/30 p-10 md:p-20 text-center">
 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">Ready to collect what you're owed?</h2>
 <p class="text-on-surface-variant max-w-2xl mx-auto mb-10">Join thousands of independent artists who trust VIBE DISTRO to power their professional careers and global growth.</p>
-<button class="bg-vibrant-blue text-surface-deep px-10 py-5 font-cta-label text-cta-label uppercase hover:bg-primary-fixed-dim transition-colors">Get Started Now</button>
+<button class="get-started-button bg-vibrant-blue text-surface-deep px-10 py-5 font-cta-label text-cta-label uppercase hover:bg-primary-fixed-dim transition-colors">Get Started Now</button>
 </div>
 </section>
 </main>
@@ -808,6 +1084,82 @@
 </div>
 </section>
 </main>
+<main id="login-view" class="hidden">
+<section class="login-screen">
+<div class="login-panel">
+<form class="login-form-wrap" action="#" method="post">
+<div class="tunecore-logo" aria-label="tunecore"><strong>tune</strong><span>CORE</span></div>
+<div class="login-field">
+<label for="login-email">Email Address</label>
+<input id="login-email" name="email" autocomplete="email" type="email"/>
+</div>
+<div class="login-field">
+<label for="login-password">Password</label>
+<input id="login-password" name="password" autocomplete="current-password" type="password"/>
+</div>
+<div class="login-actions">
+<button class="login-submit" type="submit">LOG IN</button>
+<a class="login-forgot" href="#">Forgot your password?</a>
+<a id="signup-link" class="login-account" href="#sign-up">I need an account</a>
+</div>
+</form>
+</div>
+<div class="login-photo" aria-hidden="true"></div>
+</section>
+</main>
+<main id="signup-view" class="hidden">
+<section class="login-screen">
+<div class="login-panel signup-panel">
+<form class="signup-form-wrap" action="#" method="post">
+<h1 class="signup-title">Join <span>TuneCore</span></h1>
+<div class="signup-field">
+<label for="signup-name">Name</label>
+<input id="signup-name" name="name" autocomplete="name" type="text"/>
+</div>
+<div class="signup-field">
+<label for="signup-email">Email Address</label>
+<input id="signup-email" name="email" autocomplete="email" type="email"/>
+</div>
+<div class="signup-field">
+<label for="signup-password">Password</label>
+<input id="signup-password" name="password" autocomplete="new-password" type="password"/>
+</div>
+<p class="signup-help">Password must be at least 8 characters long and contain at least 1 upper case letter, 1 number, and one of these special characters: ! # $ % &amp; ( ) * + , - . / : ; &lt; = &gt; ? @ [ ] ^ _ { }~</p>
+<div class="signup-field">
+<label for="signup-confirm-password">Confirm Password</label>
+<input id="signup-confirm-password" name="confirm_password" autocomplete="new-password" type="password"/>
+</div>
+<div class="signup-field">
+<label for="signup-country">Country/Territory</label>
+<select id="signup-country" name="country">
+<option selected>Choose Country/Territory</option>
+<option>United States</option>
+<option>Indonesia</option>
+<option>United Kingdom</option>
+</select>
+</div>
+<label class="signup-terms">
+<input type="checkbox" name="terms"/>
+<span>I Agree to the TuneCore <a href="#">Terms &amp; Conditions</a></span>
+</label>
+<div class="fake-recaptcha" aria-label="reCAPTCHA">
+<div class="fake-check"></div>
+<div>
+<span class="fake-recaptcha-text">I'm not a robot</span>
+<span class="fake-recaptcha-small">reCAPTCHA is changing its terms of service.<br/><a href="#">Take action.</a></span>
+</div>
+<div class="fake-recaptcha-badge">
+<span class="material-symbols-outlined">sync</span>
+reCAPTCHA
+</div>
+</div>
+<button class="signup-submit" type="submit">SIGN UP</button>
+<p class="signup-login">Already have an account? <a id="login-link" href="#sign-in">Login</a></p>
+</form>
+</div>
+<div class="login-photo" aria-hidden="true"></div>
+</section>
+</main>
 <!-- Footer -->
 <footer class="bg-surface-deep border-t border-outline-variant/30 py-section-gap-md mt-section-gap-lg">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-desktop max-w-container-max mx-auto">
@@ -862,11 +1214,21 @@
         const pricingView = document.getElementById('pricing-view');
         const publishingView = document.getElementById('publishing-view');
         const successView = document.getElementById('success-view');
+        const loginView = document.getElementById('login-view');
+        const signupView = document.getElementById('signup-view');
+        const siteNav = document.querySelector('nav');
+        const siteFooter = document.querySelector('footer');
+        const signInButton = document.getElementById('sign-in-button');
+        const signupLink = document.getElementById('signup-link');
+        const loginLink = document.getElementById('login-link');
+        const getStartedButtons = document.querySelectorAll('.get-started-button');
         const views = {
             home: homeView,
             pricing: pricingView,
             publishing: publishingView,
-            success: successView
+            success: successView,
+            login: loginView,
+            signup: signupView
         };
         const navLinks = document.querySelectorAll('.nav-link');
 
@@ -888,9 +1250,36 @@
                 element.classList.toggle('hidden', name !== nextView);
             });
             view = nextView;
+            const isAuth = view === 'login' || view === 'signup';
+            siteNav.classList.toggle('hidden', isAuth);
+            siteFooter.classList.toggle('hidden', isAuth);
             setActiveNav(view);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        signInButton.addEventListener('click', () => {
+            history.replaceState(null, '', '#sign-in');
+            showView('login');
+        });
+
+        signupLink.addEventListener('click', event => {
+            event.preventDefault();
+            history.replaceState(null, '', '#sign-up');
+            showView('signup');
+        });
+
+        loginLink.addEventListener('click', event => {
+            event.preventDefault();
+            history.replaceState(null, '', '#sign-in');
+            showView('login');
+        });
+
+        getStartedButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                history.replaceState(null, '', '#sign-up');
+                showView('signup');
+            });
+        });
 
         navLinks.forEach(link => {
             link.addEventListener('click', event => {
@@ -909,7 +1298,9 @@
         const hashViews = {
             '#pricing': 'pricing',
             '#publishing': 'publishing',
-            '#success-stories': 'success'
+            '#success-stories': 'success',
+            '#sign-in': 'login',
+            '#sign-up': 'signup'
         };
 
         if (hashViews[window.location.hash]) {
